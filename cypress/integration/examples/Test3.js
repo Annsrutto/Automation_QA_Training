@@ -11,7 +11,7 @@ describe('My Second Test Suite', function() {
     // How to uncheck
     cy.get('#checkBoxOption1').uncheck().should('not.be.checked')
 
-    // How to check all elements
+    // How to select multiple checkboxes
     cy.get("input[type='checkbox']").check(['option2', 'option3'])
 
     // Handling Static Dropdown using select()
@@ -26,6 +26,20 @@ describe('My Second Test Suite', function() {
     })
     // validate with assertion that the value is indeed true
     cy.get('#autocomplete').should('have.value', 'India')
+
+    // Handling Visible and Invisible elements using assertions
+    cy.get('#displayed-text').should('be.visible')
+    // check hide box
+    cy.get('#hide-textbox').click()
+    // check if not visible
+    cy.get('#displayed-text').should('not.be.visible')
+    // check show box
+    cy.get('#show-textbox').click()
+    // check if visible
+    cy.get('#displayed-text').should('be.visible')
+
+    // Handling Radio buttons
+    cy.get('[value="radio3"]').check().should('be.checked').and('have.value', 'radio3')
 
 
     })
