@@ -13,20 +13,25 @@ describe('My First Test Suite', function() {
     cy.get('.product:visible').should('have.length', 4);
 
     // Parent-Child Chaining
-    cy.get('.products').find('.product').should('have.length', 4);
+    cy.get('.products').as('productLocator')
+    cy.get('@productLocator').find('.product').should('have.length', 4);
 
     // How to select an item and add to cart
-    cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click();
+    cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click();
 
     // How to dynamically add items to cart
-    cy.get('.products').find('.product').each(($el, index, $list) => {
+    cy.get('@productLocator').find('.product').each(($el, index, $list) => {
 
         const vegtext=$el.find('h4.product-name').text()
         if (vegtext.includes('Cashews')) {
             cy.wrap($el).find('button').click()
         }
     })
-    // Manually resolving storing a variable in Cypress
+
+    // Assert if logo is correctly displayed
+    cy.get('.brand').should('have.text', 'GREENKART')
+
+    // Manually resolving storing a variable in Cypress and Print in logs
     cy.get('.brand').then((logoelement) =>{
         cy.log(logoelement.text())
     })
