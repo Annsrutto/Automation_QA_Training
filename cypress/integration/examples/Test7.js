@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('Handling Mouse Hover', function() {
     it('Should handle Mouse Hover', function() {
