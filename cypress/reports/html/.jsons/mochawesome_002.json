@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-22T21:57:09.774Z",
+    "end": "2025-10-22T21:57:21.639Z",
+    "duration": 11865,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ebbfc5ad-e62c-49bd-adef-1d6e6ea544d3",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Test2.js",
+      "file": "cypress\\integration\\examples\\Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a148c2fd-1322-4c9e-a0fc-01d7842c47ed",
+          "title": "My Second Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My secondTest case",
+              "fullTitle": "My Second Test Suite My secondTest case",
+              "timedOut": null,
+              "duration": 8768,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Test Step\ncy.visit(Cypress.env('url') + \"/seleniumPractise/#/\");\ncy.title().should('include', 'GreenKart');\ncy.get('.search-keyword').type('ca');\ncy.wait(2000);\n// Parent-Child Chaining\ncy.get('.products').as('productLocator');\n// How to dynamically add items to cart\ncy.get('@productLocator').find('.product').each(($el, index, $list) => {\n  const vegtext = $el.find('h4.product-name').text();\n  if (vegtext.includes('Cashews')) {\n    cy.wrap($el).find('button').click();\n  }\n});\ncy.get('.cart-icon > img').click();\ncy.contains('PROCEED TO CHECKOUT').click();\ncy.contains('Place Order').click();",
+              "err": {},
+              "uuid": "6d79d2a7-cd8e-4af3-bd7f-ef2ff9b96a8c",
+              "parentUUID": "a148c2fd-1322-4c9e-a0fc-01d7842c47ed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d79d2a7-cd8e-4af3-bd7f-ef2ff9b96a8c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8768,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

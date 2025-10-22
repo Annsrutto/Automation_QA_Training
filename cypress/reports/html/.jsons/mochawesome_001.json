@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-22T21:56:49.693Z",
+    "end": "2025-10-22T21:57:06.729Z",
+    "duration": 17036,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "95427832-9b70-4b9f-b4a0-8c7afe81510f",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Test10Fixtures.js",
+      "file": "cypress\\integration\\examples\\Test10Fixtures.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "84113e53-f379-42a4-9a96-66dbbae62105",
+          "title": "Loading data externally using fixtures",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should Submit Order",
+              "fullTitle": "Loading data externally using fixtures Should Submit Order",
+              "timedOut": null,
+              "duration": 13630,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const productName = this.data.productName;\nthis.homePage.goTo(Cypress.env('url') + '/loginpagePractise/#');\ncy.log(this.data.username);\nconst productPage = this.homePage.login(this.data.username, this.data.password);\nproductPage.pageValidation();\nproductPage.getCardCount().should('have.length', 4);\nproductPage.selectProduct(productName);\nproductPage.selectFirstProduct();\nconst cartPage = productPage.goToCart();\n// Resolve the promise then add assertion\ncartPage.sumOfProducts().then(sum => {\n  expect(sum).to.be.lessThan(200000);\n});\nconst confirmationPage = cartPage.checkoutItems();\nconfirmationPage.submitFormDetails();\nconfirmationPage.getAlertMessage().should('contain', 'Success');",
+              "err": {},
+              "uuid": "faf64ff4-2367-452a-9d5c-b4db3418bcd0",
+              "parentUUID": "84113e53-f379-42a4-9a96-66dbbae62105",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "faf64ff4-2367-452a-9d5c-b4db3418bcd0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13630,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.0"
+    }
+  }
+}
