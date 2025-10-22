@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('My Fourth Test Suite', function() {
     it('My fourthTest case', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Handling Popups - Cypress autoaccepts alerts and popups
     cy.get('#alertbtn').click()

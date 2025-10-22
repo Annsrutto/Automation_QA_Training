@@ -5,7 +5,7 @@ import 'cypress-iframe'
 describe('Handling iFrames', function() {
     it('Should handle iFrames', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Get iframe id then load it
     cy.frameLoaded('#courses-iframe')

@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('My Second Test Suite', function() {
     it('My secondTest case', function() {
     // Test Step
-    cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+    cy.visit(Cypress.env('url')+"/seleniumPractise/#/");
     cy.title().should('include', 'GreenKart');
 
     cy.get('.search-keyword').type('ca');

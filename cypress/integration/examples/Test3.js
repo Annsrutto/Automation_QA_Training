@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('My Third Test Suite', function() {
     it('My thirdTest case', function() {
     // Test Step
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // How to select individual checks and validating with multiple assertions
     cy.get('#checkBoxOption1').check().should('be.checked').and('have.value', 'option1')

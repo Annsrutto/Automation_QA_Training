@@ -3,7 +3,7 @@
 describe('Handling Mouse Hover', function() {
     it('Should handle Mouse Hover', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Get the hover element then use jquery method show() to display hidden elements
     cy.get('div.mouse-hover-content').invoke('show')

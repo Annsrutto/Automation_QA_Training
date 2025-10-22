@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('Handling Web Tables', function() {
     it('Should handle Web Tables', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Get all the column data in a table
     cy.get('tr td:nth-child(2)').each(($el, index, $list) => {

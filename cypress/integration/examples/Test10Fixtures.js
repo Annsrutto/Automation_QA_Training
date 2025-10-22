@@ -17,7 +17,8 @@ describe('Loading data externally using fixtures', function() {
 
         const productName = this.data.productName;
 
-        this.homePage.goTo('https://rahulshettyacademy.com/loginpagePractise/#')
+        
+        this.homePage.goTo(Cypress.env('url')+'/loginpagePractise/#')
         cy.log(this.data.username)
         const productPage = this.homePage.login(this.data.username, this.data.password)
         productPage.pageValidation()

@@ -7,7 +7,7 @@ describe('End to End E-Commerce Testing', function() {
         const productName = 'Nokia Edge';
 
         // Go to the website
-        cy.visit('https://rahulshettyacademy.com/loginpagePractise/#');
+        cy.visit(Cypress.env('url')+'/loginpagePractise/#');
         // Get username and password values
         cy.get('#username').type('rahulshettyacademy');
         cy.get('#password').type('learning');

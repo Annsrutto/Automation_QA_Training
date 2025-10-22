@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('Handling Child Windows', function() {
     it('Should handle Child Windows', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Get the element and resolve Jquery function
     cy.get('#opentab').then(function(el) {

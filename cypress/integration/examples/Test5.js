@@ -1,9 +1,9 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe('Handling Child Windows/Tabs', function() {
     it('Should handle Child Windows', function() {
     // Test Steps
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
     // Execute Jquery function to remove attribute and invoke the DOM
     cy.get('#opentab').invoke('removeAttr', 'target').click()

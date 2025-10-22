@@ -6,11 +6,7 @@ class HomePage {
         cy.visit(url)
     }
     login(username, password) {
-        // Get username and password values
-        cy.get('#username').type(username);
-        cy.get('#password').type(password);
-        // Login to page
-        cy.contains('Sign In').click();
+        cy.login(username, password)
         // Login to the dashboard
         return new ProductPage();
     }

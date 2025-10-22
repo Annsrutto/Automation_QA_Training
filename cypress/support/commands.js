@@ -29,3 +29,11 @@ Cypress.Commands.add('submitFormDetails', () => {
         cy.get('.suggestions ul li a').click()
         cy.get('.btn-success').click()
 })
+
+Cypress.Commands.add('login', (username, password) => {
+        // Get username and password values
+        cy.get('#username').type(username);
+        cy.get('#password').type(password);
+        // Login to page
+        cy.contains('Sign In').click();
+})

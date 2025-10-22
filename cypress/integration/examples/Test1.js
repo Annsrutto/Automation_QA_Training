@@ -3,7 +3,7 @@
 describe('My First Test Suite', function() {
     it('My firstTest case', function() {
     // Test Step
-    cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+    cy.visit(Cypress.env('url')+"/seleniumPractise/#/");
     cy.title().should('include', 'GreenKart');
 
     cy.get('.search-keyword').type('ca');

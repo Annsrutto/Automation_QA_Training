@@ -8,7 +8,7 @@ describe('Automating Calendar', function() {
     const date = '22';
     const year = '2027';
     const expectedList = [month, date, year];
-    cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+    cy.visit(Cypress.env('url')+"/seleniumPractise/#/offers");
 
     cy.get('.react-date-picker__inputGroup').click()
     // Navigate and select the year and month
