@@ -1,5 +1,5 @@
 // 
-// 
+
 
 describe('End to End E-Commerce Testing', function() {
     it('Should Submit Order', function() {
@@ -42,7 +42,7 @@ describe('End to End E-Commerce Testing', function() {
         cy.contains('button', 'Checkout').click()
         // Add your country name
         cy.get('#country').type('India')
-        cy.wait(2000)
+        cy.wait(1000)
         cy.get('.suggestions ul li a').click()
         // click on purchase button
         cy.get('.btn-success').click()
